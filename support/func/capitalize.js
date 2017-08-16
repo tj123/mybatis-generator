@@ -6,7 +6,8 @@
  */
 module.exports = function capitalize(str) {
 
-    return String(str).replace(/^\w/, function (match) {
-        return match.toUpperCase();
-    });
+  return String(str).replace(/^\w/, function (match) {
+    return match.toUpperCase();
+  });
+
 };

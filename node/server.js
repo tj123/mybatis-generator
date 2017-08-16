@@ -21,7 +21,7 @@ var dbConfig = require(config);
 require('./db')(dbConfig, server);
 
 //server.provider = 'file';//从哪里取数据
-server.provider = 'mysql';//从哪里取数据
+server.provider = 'mysql'; //从哪里取数据
 
 server.get(/\/.*\.(html|css|js|woff|woff2|ttf)/, restify.serveStatic({
     directory: __dirname + '/../views',
@@ -41,15 +41,15 @@ server.use(
     }
 );
 
-Object.keys(controllers).forEach(function (key) {
+Object.keys(controllers).forEach(function(key) {
     server.get(key, controllers[key]);
 });
 
-server.get('/', function (req, res) {
+server.get('/', function(req, res) {
     res.header('Location', '/index.html');
     res.send(302);
 });
 
-server.listen(dbConfig.httpPort, function () {
+server.listen(dbConfig.httpPort, function() {
     console.log('%s listening at %s', server.name, server.url);
 });

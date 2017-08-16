@@ -9,12 +9,15 @@ var fieldMapping = require("./../mapping/FieldMapping");
  * @returns {Array}
  */
 module.exports = function normalize(tableDesc) {
-    return tableDesc.rows.map(function (row) {
-        return {
-            field: row.field,
-            type: row.type,
-            javaField: fieldMapping(row.field),
-            javaType: typeMapping(row.type)
-        }
-    });
+
+  return tableDesc.rows.map(function (row) {
+    return {
+      field: row.field,
+      type: row.type,
+      javaField: fieldMapping(row.field),
+      javaType: typeMapping(row.type),
+      comment:row.comment
+    }
+  });
+
 };

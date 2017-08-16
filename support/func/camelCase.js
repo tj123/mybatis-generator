@@ -6,7 +6,8 @@
  */
 module.exports = function camelCase(underscore_case) {
 
-    return String(underscore_case).replace(/_\w/g, function (match) {
-        return match[1].toUpperCase();
-    });
+  return String(underscore_case).replace(/_\w/g, function (match) {
+    return match[1].toUpperCase();
+  });
+
 };

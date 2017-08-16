@@ -51,6 +51,12 @@ function getState() {
 
 function buildColumns(data) {
     var rows = data.rows.map(function (row, idx) {
+
+        if(!row.comment){
+          row.comment = '';
+        }else{
+          row.comment = row.comment.replace(/\n/g,'<br/>');
+        }
         return <tr key={idx}>
             <td><input className="ui input" type="checkbox" checked={row.checked}
                        onChange={checkColumn.bind(null,idx)}/></td>
@@ -58,6 +64,7 @@ function buildColumns(data) {
             <td>{row.type}</td>
             <td>{row.javaField}</td>
             <td>{row.javaType}</td>
+            <td dangerouslySetInnerHTML={{__html:row.comment}}></td>
         </tr>
     });
     return <table className="ui table">
@@ -68,6 +75,7 @@ function buildColumns(data) {
             <th>type</th>
             <th>javaField</th>
             <th>javaType</th>
+            <th>备注</th>
         </tr>
         </thead>
         <tbody>

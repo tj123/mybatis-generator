@@ -1,10 +1,10 @@
 {
-  "host": "localhost",
-  "database": "test",
-  "user": "test",
-  "password": "test",
-  "connectionLimit": 10,
-  "dbPort": 3306,
-  "httpPort":8887,
-  "jdbcDriver": "com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
+    "host": "192.168.1.7",
+    "database": "govx_dev",
+    "user": "gov",
+    "password": "yuanben",
+    "connectionLimit": 10,
+    "dbPort": 3306,
+    "httpPort": 8887,
+    "jdbcDriver": "com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
 }
